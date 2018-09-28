@@ -1,0 +1,14 @@
+{
+  "name": "language-pbrt",
+  "version": "0.1.0",
+  "description": "Atom syntax highlighting for pbrt",
+  "keywords": [
+    "language",
+    "grammar"
+  ],
+  "repository": "https://github.com/sadjad/language-pbrt",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

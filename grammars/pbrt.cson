@@ -1,0 +1,43 @@
+# If this is your first time writing a language grammar, check out:
+#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+
+'scopeName': 'source.pbrt'
+'name': 'pbrt'
+
+'fileTypes': [
+  'pbrt'
+]
+
+'patterns': [
+  {
+    'match': '#.*$'
+    'name': 'comment'
+  }
+  {
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.pbrt'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escaped.pbrt'
+      }
+      # {
+      #   'match': '(float|integer|bool|point2|vector2|point3|vector3|point|vector|normal|string|texture|color|rgb|xyz|blackbody|spectrum)'
+      #   'name': 'storage.type.pbrt'
+      # }
+    ]
+  }
+  {
+    'match': '(?<![\'\\.])(?:(?:(?:\\b\\d(?:[\\d\']*\\d)?\\.\\d(?:[\\d\']*\\d)?|\\B\\.\\d(?:[\\d\']*\\d)?)(?:[Ee][+-]?\\d(?:[\\d\']*\\d)?)?(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))?\\b|(?:\\b\\d(?:[\\d\']*\\d)?\\.)(?:\\B|(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))\\b|(?:[Ee][+-]?\\d(?:[\\d\']*\\d)?)(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))?\\b)|\\b\\d(?:[\\d\']*\\d)?(?:[Ee][+-]?\\d(?:[\\d\']*\\d)?)(?:[fFlL]|(?:i[fl]?|h|min|[mun]?s|_\\w*))?\\b)|\\b(?:(?:[1-9](?:[\\d\']*\\d)?|0(?:[0-7\']*[0-7])?|0[Xx][\\da-fA-F](?:[\\da-fA-F\']*[\\da-fA-F])?|0[Bb][01](?:[01\']*[01])?)(?:(?:l{1,2}|L{1,2})[uU]?|[uU](?:l{0,2}|L{0,2})|(?:i[fl]?|h|min|[mun]?s|_\\w*))?)\\b)(?!\\.)'
+    'name': 'constant.numeric.pbrt'
+  }
+  {
+    'match': '\\b(?:Accelerator|ActiveTransform|All|AreaLightSource|Camera|ConcatTransform|CoordinateSystem|CoordSysTransform|EndTime|Film|Identity|Include|Integrator|LightSource|LookAt|MakeNamedMaterial|MakeNamedMedium|Material|MediumInterface|NamedMaterial|ObjectInstance|PixelFilter|ReverseOrientation|Rotate|Sampler|Scale|Shape|StartTime|Texture|Transform|TransformTimes|Translate)\\b'
+    'name': 'keyword.control.pbrt'
+  }
+  {
+    'match': '\\b(?:TransformBegin|TransformEnd|WorldBegin|WorldEnd|AttributeBegin|AttributeEnd|ObjectBegin|ObjectEnd)\\b'
+    'name': 'entity.name.tag.pbrt'
+  }
+]
